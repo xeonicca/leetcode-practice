@@ -12,10 +12,10 @@
  */
 var rotate = function(nums, k) {
   const old = nums.slice()
-
-  for (let i = 0; i < nums.length; i++) {
+  const len = nums.length
+  for (let i = 0; i < len; i++) {
     // assign curr value to new index after rotation k
-    nums[(i + k) % nums.length] = old[i]
+    nums[(i + k) % len] = old[i]
   }
 };
 // @lc code=end
