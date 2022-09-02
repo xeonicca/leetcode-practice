@@ -26,6 +26,7 @@ var numIslands = function (grid) {
 
     // add current poisition in to queue
     // acting as starting position
+    grid[r][c] = '0'
     q.push([r, c])
 
     while (q.length) {
