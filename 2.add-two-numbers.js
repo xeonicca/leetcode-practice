@@ -21,6 +21,7 @@ var addTwoNumbers = function (l1, l2) {
   let head = (node = new ListNode(0)),
     sum = 0
   while (l1 !== null || l2 !== null) {
+    // add to sum if node is available and advance to next node
     if (l1) {
       sum += l1.val
       l1 = l1.next
@@ -31,8 +32,10 @@ var addTwoNumbers = function (l1, l2) {
       l2 = l2.next
     }
 
+    // set the base value of new node
     node.next = new ListNode(sum % 10)
     node = node.next
+    // if current sum is greater than 10, our base value for next node starts from 1
     sum = sum > 9 ? 1 : 0
   }
 
@@ -40,6 +43,7 @@ var addTwoNumbers = function (l1, l2) {
     node.next = new ListNode(1)
   }
 
+  // the first node is the dummy node, so we wanna return its next node
   return head.next
 }
 // @lc code=end
